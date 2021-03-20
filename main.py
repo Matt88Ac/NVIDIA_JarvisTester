@@ -12,6 +12,7 @@ import time
 q = queue.Queue()
 fname = 'new_file.wav'
 sr = 44100
+server_ip = '54.87.118.144'
 
 
 def callback(indata, frames, time, status):
@@ -62,8 +63,9 @@ os.remove(fname)
 to_send = {'content': list(content), 'sr': sr}
 to_send = json.dumps(to_send)
 
-out = requests.post('http://52.204.36.243:5000/audio', json=to_send)
+out = requests.post(f'http://{server_ip}:5000/audio', json=to_send)
 content = json.loads(out.content)
 sr = int(content['sr'])
 content = np.array(content['content'])
 sd.play(content, sr, blocking=True)
+sf.write('ourfile.wav', content, samplerate=sr)
