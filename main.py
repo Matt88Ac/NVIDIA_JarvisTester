@@ -59,7 +59,7 @@ with io.open(fname, 'rb') as file:
     content = file.read()
 
 os.remove(fname)
-
+print('waiting for an answer...')
 to_send = {'content': list(content), 'sr': sr}
 to_send = json.dumps(to_send)
 
