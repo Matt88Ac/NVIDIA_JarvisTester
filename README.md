@@ -88,8 +88,4 @@ The request contains the sample rate and the audio sample recorded.
 
 Example Output:
 ![out](https://github.com/Matt88Ac/NVIDIA_JarvisTester/blob/main/images/output.jpeg)
-## TODO:
--Presentation.
--Quick start instruction
--Add requirments.txt
--screenshots of examples
+
